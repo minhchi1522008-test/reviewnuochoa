@@ -232,6 +232,97 @@
             background: linear-gradient(135deg, rgba(212, 241, 249, 0.85) 0%, rgba(255, 255, 255, 0.9) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
             border-bottom: 1px solid #e0e0e0;
         }
+        /* --- CSS CHO FORM ĐÁNH GIÁ --- */
+        .feedback-section {
+            background-color: #e1f5fe; /* Nền xanh biển cực nhạt */
+            border-left: 6px solid #0077b6;
+        }
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .feedback-form input, .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #b3e5fc;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            box-sizing: border-box; /* Giúp khung nhập liệu không bị tràn lề */
+            transition: border-color 0.3s;
+        }
+        .feedback-form input:focus, .feedback-form textarea:focus {
+            outline: none;
+            border-color: #0077b6; /* Đổi màu viền khi click vào */
+        }
+        .feedback-form button {
+            background-color: #0077b6;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            align-self: flex-start; /* Nút nằm gọn ở góc trái */
+        }
+        .feedback-form button:hover {
+            background-color: #023e8a;
+        }
+
+        /* --- CSS CHO FOOTER CHUYÊN NGHIỆP --- */
+        footer {
+            background-color: #03045e;
+            color: #ffffff;
+            padding: 50px 20px;
+            margin-top: 50px;
+            font-size: 0.9em;
+            line-height: 1.8;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex; /* Dàn trang thành các cột ngang */
+            flex-wrap: wrap; /* Tự động rớt dòng nếu màn hình nhỏ */
+            justify-content: space-between;
+            gap: 30px;
+            text-align: left; /* Căn trái toàn bộ chữ giống các báo điện tử */
+        }
+        .footer-container > div {
+            flex: 1; /* Chia đều độ rộng cho các cột */
+            min-width: 250px; /* Độ rộng tối thiểu để không bị bóp méo chữ */
+        }
+        .footer-brand h2 {
+            margin-top: 0;
+            color: #caf0f8; /* Màu xanh sáng làm điểm nhấn */
+        }
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+        .social-links a:hover {
+            color: #0077b6;
+        }
+        .footer-info strong, .footer-contact strong {
+            display: block;
+            margin-bottom: 15px;
+            color: #caf0f8;
+            font-size: 1.1em;
+            text-transform: uppercase;
+        }
+        .footer-info p, .footer-contact p {
+            margin: 5px 0;
+            color: #d9d9d9;
+        }
     </style>
 </head>
 <body>
@@ -267,7 +358,7 @@
                 <li><strong>Độ tỏa hương (Sillage):</strong> Ưu tiên tỏa gần (skin-scent), thoang thoảng. Tuyệt đối tránh các mùi bám tỏa quá xa gây ngộp thở cho người xung quanh.</li>
                 <li><strong>Nhóm hương an toàn:</strong> Tập trung vào nhóm hương Cam chanh (Citrus), Biển cả (Aquatic), hoặc Trà xanh. Tránh xa các nốt hương gỗ đậm, gia vị cay hay quá ngọt.</li>
                 <li><strong>Độ lưu hương:</strong> Mức khá (4-6 tiếng), đủ duy trì sự tươi mát cho một buổi học trên trường.</li>
-                <li><strong>Mức giá & Sự đa dụng:</strong> Giá thành hợp lý. Mùi hương linh hoạt, dễ dùng khi đi học hoặc đi chơi.</li>
+                <li><strong>Mức giá & Sự đa dụng:</strong> Giá thành hợp lý. Mùi hương linh hoạt, dễ dùng từ lúc đi học đến khi đi chơi thêm.</li>
             </ul>
         </section>
         <hr>
@@ -317,6 +408,24 @@
                         <p><strong>- Giá tham khảo:</strong> ~1.800.000đ - 2.200.000đ / chai 100ml.</p>
                     </div>
                 </div>
+                <div class="perfume-item">
+                    <img src="lacoste.webp" alt="Lacoste L.12.12 Blanc" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Lacoste L.12.12 Blanc </strong>
+                        <p>Mùi hương mang đậm tinh thần thể thao nhưng vẫn vô cùng thanh lịch. Sự kết hợp của quả bưởi tây, hoa huệ và da lộn tạo ra cảm giác sạch sẽ, tươm tất hệt như bạn vừa khoác lên mình một chiếc áo sơ mi trắng tinh khôi rực rỡ dưới nắng hè. Một lựa chọn tuyệt đối an toàn và ghi điểm tối đa.</p>
+                        <p><strong>- Phong cách:</strong> Sạch sẽ, tươm tất, năng động.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~1.200.000đ - 1.500.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+                <div class="perfume-item">
+                    <img src="ckone.jpg" alt="Calvin Klein CK One Essence" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Calvin Klein CK One Essence </strong>
+                        <p>Phiên bản cao cấp và đậm đặc gấp đôi so với huyền thoại CK One nguyên bản. Vẫn mang ADN thanh mát, trong trẻo của trà xanh và cam chanh, nhưng Essence mượt mà hơn, có chiều sâu hơn và đặc biệt là độ lưu hương được cải thiện vượt trội. Thiết kế chai tráng gương bóng bẩy cực kỳ bắt mắt.</p>
+                        <p><strong>- Phong cách:</strong> Hiện đại, tự do, cuốn hút.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~1.200.000đ - 1.600.000đ / chai 100ml.</p>
+                    </div>
+                </div>
             </div>
 
             <h3>Hương Hè Cho Nữ</h3>
@@ -350,6 +459,25 @@
                         <p><strong>- Giá tham khảo:</strong> ~2.200.000đ - 2.600.000đ / chai 100ml.</p>
                     </div>
                 </div>
+                <div class="perfume-item">
+                    <img src="maison.webp" alt="Replica Lazy Sunday Morning" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Maison Margiela Replica Lazy Sunday Morning</strong>
+                        <p>Đỉnh cao của phong cách "Clean Girl". Mùi hương mô phỏng sự sạch sẽ của những chiếc áo sơ mi trắng tinh tươm vừa được giặt phơi dưới nắng sớm. Sự kết hợp của hoa diên vĩ, xạ hương trắng và quả lê tạo nên một cảm giác vô cùng thư giãn, trong trẻo. Tuyệt đối an toàn và tinh tế cho môi trường học đường.</p>
+                        <p><strong>- Phong cách:</strong> Sạch sẽ, tinh khôi, thư giãn.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~2.800.000đ - 3.200.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+
+                <div class="perfume-item">
+                    <img src="woodsage.jpg" alt="Jo Malone Wood Sage & Sea Salt" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Jo Malone Wood Sage & Sea Salt</strong>
+                        <p>Một cơn gió biển thực sự giữa ngày hè oi ả. Khác với những mùi hương nữ tính ngọt ngào thông thường, chai nước hoa này mang vị mặn nhẹ của muối biển kết hợp cùng sự thanh tao của thảo mộc xô thơm. Rất mộc mạc, phóng khoáng, mát mẻ và xua tan ngay lập tức không khí ngột ngạt của lớp học.</p>
+                        <p><strong>- Phong cách:</strong> Tự do, thanh tao, gần gũi.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~3.000.000đ - 3.500.000đ / chai 100ml.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -358,7 +486,7 @@
             <ul>
                 <li><strong>Vị trí xịt:</strong> Tập trung vào các điểm mạch tĩnh mạch (cổ tay, sau gáy, hoặc khuỷu tay) để nhiệt độ cơ thể giúp tỏa hương đều.</li>
                 <li><strong>Tránh ố vàng áo:</strong> Để vòi xịt cách da khoảng 10-15cm. Xịt trực tiếp lên da và đợi khô hẳn rồi mới mặc áo trắng đồng phục.</li>
-                <li><strong>Dưỡng ẩm giữ mùi:</strong> Bôi một lớp mỏng lotion (dưỡng ẩm) không mùi lên da trước khi xịt sẽ giúp nước hoa bám trụ lâu hơn trong mùa hè.</li>
+                <li><strong>Dưỡng ẩm giữ mùi:</strong> Bôi một lớp mỏng lotion không mùi lên da trước khi xịt sẽ giúp nước hoa bám trụ lâu hơn trong mùa hè.</li>
             </ul>
             <img src="vitri.jpg" alt="Vị trí xịt nước hoa" class="article-img">
         </section>
@@ -395,12 +523,45 @@
                 <p>Nước hoa chứa cồn và tinh dầu nên có rủi ro làm ố vàng áo sơ mi trắng theo thời gian. Tốt nhất bạn nên xịt trực tiếp lên da, đợi da khô hoàn toàn rồi mới mặc áo. Nếu vẫn muốn xịt lên quần áo để giữ mùi lâu hơn, hãy xịt cách xa khoảng 15-20cm để tia nước tỏa thành sương mù nhé.</p>
             </details>
         </section>
+        <section class="feedback-section">
+            <h2 style="border-bottom: none;">Tham gia đóng góp ý kiến</h2>
+            <p>Bạn thấy bài viết này có hữu ích không? Hãy để lại email và nhận xét để Trạm Hương Mùa Hè ngày càng hoàn thiện hơn nhé!</p>
+            
+            <form action="#" method="POST" class="feedback-form">
+                <input type="email" name="email" placeholder="Nhập địa chỉ email của bạn..." required>
+                <textarea name="message" rows="4" placeholder="Nhập đánh giá hoặc ý tưởng của bạn về bài viết..." required></textarea>
+                <button type="submit">Gửi Ý Kiến</button>
+            </form>
+        </section>
     </main>
     <hr>
 
-    <footer>
-        <p>Người thực hiện: Nguyễn Minh Chí</p>
-        <p>&copy; 2026 Trạm Hương Mùa Hè. Tự thiết kế bằng HTML.</p>
+   <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Trạm Hương Mùa Hè</h2>
+                <p>Nơi chia sẻ những mùi hương thanh mát, nhẹ nhàng đồng hành cùng lứa tuổi học trò.</p>
+                <div class="social-links">
+                    <a href="#">📘 Facebook</a>
+                    <a href="#">📸 Instagram</a>
+                    <a href="#">▶️ YouTube</a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <strong>Thông tin & Bản quyền</strong>
+                <p>Dự án thiết kế Website Review Nước Hoa.</p>
+                <p>Chịu trách nhiệm nội dung: Minh Chí</p>
+                <p>&copy; 2026 Trạm Hương Mùa Hè. All rights reserved.</p>
+            </div>
+
+            <div class="footer-contact">
+                <strong>Thông tin liên hệ</strong>
+                <p>📍 Địa chỉ: Lạc Hồng, Hưng Yên</p>
+                <p>📧 Email: contact@tramhuongmuahe.vn</p>
+                <p>📞 Hotline: 03xx.xxx.xxx</p>
+            </div>
+        </div>
     </footer>
 
 </body>

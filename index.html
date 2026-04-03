@@ -295,30 +295,37 @@
             flex: 1; /* Chia đều độ rộng cho các cột */
             min-width: 250px; /* Độ rộng tối thiểu để không bị bóp méo chữ */
         }
-        .footer-brand h2 {
+        /* Định dạng đồng bộ cho tất cả các tiêu đề mục trong Footer */
+        .footer-brand h2,
+        .footer-links strong,
+        .footer-info strong,
+        .footer-contact strong {
+            display: block;
             margin-top: 0;
-            color: #caf0f8; /* Màu xanh sáng làm điểm nhấn */
+            margin-bottom: 15px;
+            color: #d4f1f9; /* Màu xanh lơ nhạt, sáng bừng lên */
+            font-size: 1.2em;
+            text-transform: uppercase; /* Viết hoa toàn bộ chữ */
+            letter-spacing: 0.5px;
         }
+
+        /* --- Vẫn giữ nguyên phần mạng xã hội và chữ nhỏ --- */
         .social-links {
             margin-top: 15px;
             display: flex;
             gap: 15px;
         }
+        
         .social-links a {
             color: white;
             text-decoration: none;
             font-size: 0.95em;
         }
+        
         .social-links a:hover {
             color: #0077b6;
         }
-        .footer-info strong, .footer-contact strong {
-            display: block;
-            margin-bottom: 15px;
-            color: #caf0f8;
-            font-size: 1.1em;
-            text-transform: uppercase;
-        }
+
         .footer-info p, .footer-contact p {
             margin: 5px 0;
             color: #d9d9d9;
@@ -547,7 +554,22 @@
                     <a href="#">▶️ YouTube</a>
                 </div>
             </div>
-
+            
+            <div class="footer-links">
+                <strong>Liên kết tham khảo</strong>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://www.fragrantica.com/" target="_blank" style="color: #d9d9d9; text-decoration: none; transition: color 0.3s;">📖 Bách khoa Fragrantica</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://perfumista.vn/" target="_blank" style="color: #d9d9d9; text-decoration: none; transition: color 0.3s;">✨ Cộng đồng Perfumista</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://kenh14.vn/beauty-fashion.chn" target="_blank" style="color: #d9d9d9; text-decoration: none; transition: color 0.3s;">📰 Chuyên mục Làm đẹp (Kenh14)</a>
+                    </li>
+                </ul>
+            </div>
+            
             <div class="footer-info">
                 <strong>Thông tin & Bản quyền</strong>
                 <p>Dự án thiết kế Website Review Nước Hoa.</p>

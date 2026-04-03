@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trạm Hương Mùa Hè | Nước Hoa Học Đường</title>
+    <style>
+        /* 1. Nhúng Font chữ Montserrat cực kỳ sang trọng từ Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f8ff; /* Nền xanh Alice mờ ảo, vô cùng mát mắt */
+            color: #333;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        /* 2. Căn chỉnh Header với Gradient sáng tạo */
+        header {
+            text-align: center;
+            padding: 60px 20px 80px 20px;
+            background: linear-gradient(135deg, #d4f1f9 0%, #ffffff 100%); /* Xanh biển nhạt chuyển dần sang trắng */
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        header h1 {
+            color: #0077b6; /* Xanh đại dương sâu thẳm, sang trọng */
+            font-size: 2.8em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .slogan {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #555;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        /* 3. Thanh Menu Năng Động (Pill-shape) */
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 119, 182, 0.08); /* Đổ bóng ám xanh nhẹ */
+            border-radius: 50px;
+            max-width: 950px;
+            margin: -35px auto 40px auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        nav h2 {
+            display: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 10px 22px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        /* Hiệu ứng khi di chuột vào menu */
+        nav ul li a:hover {
+            background-color: #0077b6; /* Đổi màu nền nút thành xanh biển */
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 119, 182, 0.3);
+        }
+
+        /* 4. Định dạng các khối nội dung (Cards) */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.05);
+            border-left: 6px solid #0077b6; /* Viền nhấn bên trái màu xanh đại dương */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.12); /* Bóng đổ sáng lên khi rê chuột */
+        }
+
+        section h2 {
+            color: #0077b6;
+            border-bottom: 2px dashed #e1f5fe;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #023e8a; /* Xanh Navy cho tiêu đề phụ */
+            font-size: 1.4em;
+            margin-top: 30px;
+        }
+
+        hr {
+            display: none; 
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #03045e; /* Xanh đen biển sâu cho chân trang */
+            color: #ffffff;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        /* CSS cho bố cục ảnh và chữ phần Review */
+        .perfume-item {
+            display: flex; /* Đặt ảnh và chữ nằm ngang */
+            align-items: flex-start; /* Căn lề trên cùng */
+            gap: 25px; /* Khoảng cách giữa ảnh và chữ */
+            background: #f8fbff; /* Nền xanh siêu nhạt làm nổi bật từng khối */
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .perfume-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Giúp ảnh không bị méo tỉ lệ */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-shrink: 0; /* Giữ nguyên kích thước ảnh, không bị ép nhỏ lại */
+        }
+
+        .perfume-info {
+            flex: 1; /* Phần chữ sẽ chiếm phần không gian còn lại */
+        }
+
+        .perfume-info p {
+            margin-top: 0; /* Chỉnh lại lề cho chữ gọn gàng */
+        }
+
+        /* CSS cho ảnh minh họa lớn (Cách xịt & Phân biệt Fake) */
+        .article-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 20px auto;
+            display: block; /* Đẩy ảnh ra giữa */
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.15);
+        }
+        .perfume-img {
+            width: 220px;   /* Phóng to chiều rộng */
+            height: 220px;  /* Phóng to chiều cao tương ứng */
+            object-fit: cover; 
+            border-radius: 14px; /* Bo góc mềm mại hơn một chút */
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.15); /* Tăng nhẹ bóng đổ cho hợp với ảnh to */
+            flex-shrink: 0; 
+        }
+        details {
+            margin-bottom: 15px; /* Tạo khoảng trống giữa các câu hỏi */
+        }
+        
+        summary {
+            cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay khi chỉ vào câu hỏi */
+            color: #023e8a;
+        }
+        /* Định dạng khối Lời Mở Đầu cách điệu */
+        #gioi-thieu {
+            background: linear-gradient(120deg, #e8f4f8 0%, #ffffff 100%); /* Gradient xanh siêu nhẹ */
+            border-left: 6px solid #0077b6; /* Viền nhấn dọc bên trái */
+            padding: 35px 40px;
+            border-radius: 0 16px 16px 0; /* Chỉ bo góc bên phải */
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.05);
+        }
+
+        #gioi-thieu p {
+            font-size: 1.15em; 
+            font-style: italic; /* Chữ in nghiêng mượt mà */
+            color: #444;
+            margin: 0;
+        }
+
+        /* Hiệu ứng Drop Cap (Chữ cái đầu to ra giống tạp chí) */
+        #gioi-thieu p::first-letter {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #0077b6;
+            float: left; /* Đẩy chữ M sang trái để các chữ khác bao quanh */
+            line-height: 0.8;
+            margin-right: 12px;
+            margin-top: 5px;
+            font-family: 'Georgia', serif; /* Đổi font chữ cái đầu cho nét hơn */
+        }
+        header {
+            text-align: center;
+            padding: 70px 20px 90px 20px;
+            /* Thêm ảnh mặt nước biển đè dưới lớp màu xanh mờ */
+            background: linear-gradient(135deg, rgba(212, 241, 249, 0.85) 0%, rgba(255, 255, 255, 0.9) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            border-bottom: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="margin-bottom: 15px;">
+            <span style="background-color: #0077b6; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">🌊 Tuyển tập 2026</span>
+        </div>
+        <h1>Trạm Hương Mùa Hè</h1>
+        <p class="slogan">- Gợi ý nước hoa thanh mát, nhẹ nhàng cho học sinh đến trường -</p>
+    </header>
+    <section id="gioi-thieu">
+        <p>Mùa hè oi bức ở trường học đòi hỏi sự tinh tế trong việc chọn mùi hương. Một chai nước hoa phù hợp không chỉ giúp bạn tự tin, sảng khoái mà còn thể hiện sự tôn trọng không gian lớp học. "Trạm Hương Mùa Hè" ra đời nhằm tổng hợp và đánh giá khách quan những mùi hương thanh mát, an toàn và thân thiện nhất với túi tiền học sinh, giúp bạn dễ dàng tìm được "chân ái" cho mùa hè này.</p>
+    </section>
+
+    <nav>
+        <h2>Danh mục nội dung</h2>
+        <ul>
+            <li><a href="#tieu-chi">1. Tiêu chí chọn nước hoa đi học</a></li>
+            <li><a href="#bi-kip">2. Bí kíp test mùi & chọn mua</a></li>
+            <li><a href="#review">3. Góc Review Chi Tiết</a></li>
+            <li><a href="#cach-dung">4. Kỹ năng sử dụng đúng cách</a></li>
+            <li><a href="#auth-fake">5. Phân biệt Thật - Giả</a></li>
+            <li><a href="#faq">6. Giải đáp thắc mắc (FAQ)</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <main>
+        <section id="tieu-chi">
+            <h2>1. Tiêu chí chọn nước hoa đi học mùa hè</h2>
+            <ul>
+                <li><strong>Độ tỏa hương (Sillage):</strong> Ưu tiên tỏa gần (skin-scent), thoang thoảng. Tuyệt đối tránh các mùi bám tỏa quá xa gây ngộp thở cho người xung quanh.</li>
+                <li><strong>Nhóm hương an toàn:</strong> Tập trung vào nhóm hương Cam chanh (Citrus), Biển cả (Aquatic), hoặc Trà xanh. Tránh xa các nốt hương gỗ đậm, gia vị cay hay quá ngọt.</li>
+                <li><strong>Độ lưu hương:</strong> Mức khá (4-6 tiếng), đủ duy trì sự tươi mát cho một buổi học trên trường.</li>
+                <li><strong>Mức giá & Sự đa dụng:</strong> Giá thành hợp lý. Mùi hương linh hoạt, dễ dùng từ lúc đi học đến khi đi chơi thêm.</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="bi-kip">
+            <h2>2. Bí kíp test mùi và chọn mua</h2>
+            <ul>
+                <li><strong>Mua ống chiết (Vial/Decant):</strong> Luôn bắt đầu bằng ống chiết 5-10ml để thử xem mùi hương có bị biến đổi khi kết hợp với mồ hôi của bạn trong thời tiết nóng hay không.</li>
+                <li><strong>Thử trực tiếp lên da:</strong> Ngửi trên giấy thử (blotter) không phản ánh đúng 100% mùi hương thật khi lên cơ địa của mỗi người.</li>
+                <li><strong>Cho mũi nghỉ ngơi:</strong> Không nên ngửi liên tục quá 3 loại nước hoa cùng lúc để tránh tình trạng "loạn khứu giác".</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="review">
+            <section id="review">
+            <h2>3. Góc Review Chi Tiết</h2>
+            
+            <h3>Hương Hè Cho Nam</h3>
+            <div class="perfume-list">
+                <div class="perfume-item">
+                    <img src="nautica.jpg" alt="Nautica Voyage" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Nautica Voyage</strong>
+                        <p>Mùi hương "quốc dân" cho nam sinh. Tươi mát, giòn tan mùi táo xanh và lá cây. Cảm giác sạch sẽ như vừa bước ra từ phòng tắm. Rất rẻ và cực kỳ an toàn cho không gian lớp học.</p>
+                        <p><strong>- Phong cách:</strong> Năng động, trẻ trung, thể thao.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~500.000đ - 700.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+
+                <div class="perfume-item">
+                    <img src="gio trang.jpg" alt="Acqua Di Giò" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Giorgio Armani Acqua Di Giò (Giò Trắng)</strong>
+                        <p>Huyền thoại kinh điển. Sự pha trộn mượt mà giữa chanh vàng và hương nước biển. Thanh lịch, nam tính và vô cùng dễ chịu.</p>
+                        <p><strong>- Phong cách:</strong> Thanh lịch, nam tính, kinh điển.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~2.500.000đ - 3.000.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+
+                <div class="perfume-item">
+                    <img src="versace.jpg" alt="Versace Pour Homme" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Versace Pour Homme</strong>
+                        <p>Sang trọng nhưng vẫn trẻ trung. Nổi bật với hương hoa hồng Pháp, chanh vàng và gỗ tuyết tùng. Độ đa dụng cực cao, đi học hay dự sự kiện trường đều hợp.</p>
+                        <p><strong>- Phong cách:</strong> Tươi mát, sang trọng, cuốn hút.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~1.800.000đ - 2.200.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Hương Hè Cho Nữ</h3>
+            <div class="perfume-list">
+                <div class="perfume-item">
+                    <img src="DG.jpg" alt="Light Blue" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Dolce & Gabbana Light Blue</strong>
+                        <p>Giống như một ly nước chanh đá giải nhiệt. Hương chanh vàng Sicily kết hợp táo xanh cực kỳ trong trẻo, năng động, rất hợp mặc áo sơ mi trắng.</p>
+                        <p><strong>- Phong cách:</strong> Tự do, năng động, tươi mới.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~2.000.000đ - 2.500.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+
+                <div class="perfume-item">
+                    <img src="elizabeth.jpg" alt="Green Tea" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Elizabeth Arden Green Tea</strong>
+                        <p>Nhẹ nhàng, thư giãn tuyệt đối với nốt hương trà xanh và bạc hà. Mùi hương không ồn ào, rất an toàn để dùng hàng ngày đi học.</p>
+                        <p><strong>- Phong cách:</strong> Giản dị, thư giãn, thanh tao.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~400.000đ - 600.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+
+                <div class="perfume-item">
+                    <img src="daisy.png" alt="Marc Jacobs Daisy" class="perfume-img">
+                    <div class="perfume-info">
+                        <strong>Marc Jacobs Daisy Eau So Fresh</strong>
+                        <p>Dành cho các bạn nữ thích sự dễ thương, trong sáng. Sự kết hợp trái cây và hương lục tươi mát, không hề bị ngọt gắt.</p>
+                        <p><strong>- Phong cách:</strong> Dễ thương, nữ tính, trong trẻo.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~2.200.000đ - 2.600.000đ / chai 100ml.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cach-dung">
+            <h2>4. Kỹ năng sử dụng đúng cách</h2>
+            <ul>
+                <li><strong>Vị trí xịt:</strong> Tập trung vào các điểm mạch tĩnh mạch (cổ tay, sau gáy, hoặc khuỷu tay) để nhiệt độ cơ thể giúp tỏa hương đều.</li>
+                <li><strong>Tránh ố vàng áo:</strong> Để vòi xịt cách da khoảng 10-15cm. Xịt trực tiếp lên da và đợi khô hẳn rồi mới mặc áo trắng đồng phục.</li>
+                <li><strong>Dưỡng ẩm giữ mùi:</strong> Bôi một lớp mỏng lotion không mùi lên da trước khi xịt sẽ giúp nước hoa bám trụ lâu hơn trong mùa hè.</li>
+            </ul>
+            <img src="vitri.jpg" alt="Vị trí xịt nước hoa" class="article-img">
+        </section>
+
+        <section id="auth-fake">
+            <h2>5. Góc Cảnh Giác: Phân biệt Thật - Giả</h2>
+            <ul>
+                <li><strong>Chi tiết bao bì:</strong> Hàng thật có font chữ in sắc nét, không bong tróc. Vòi xịt êm ái, ống dẫn nước hoa bên trong thường trong suốt và vừa vặn chạm đáy chai.</li>
+                <li><strong>Chất lượng mùi:</strong> Hàng giả (fake) thường có mùi cồn xộc lên mũi rất gắt ở nốt hương đầu và độ lưu hương cực kỳ kém (bay sạch sau 30 phút).</li>
+            </ul>
+            <img src="nuoc-hoa-that-gia1.webp" alt="So sánh nước hoa Thật và Giả" class="article-img">
+        </section>
+            
+        </section>
+        <hr>
+
+        <section id="faq">
+            <h2>6. Giải đáp thắc mắc (FAQ)</h2>
+            <details>
+                <summary><strong>Đi học xịt bao nhiêu nhát là đủ?</strong></summary>
+                <p>Nên xịt tối đa 2-3 nhát (1 ở cổ tay, 1-2 ở sau gáy) để duy trì sự thoang thoảng, tinh tế, không làm ảnh hưởng đến không gian lớp học chật hẹp.</p>
+            </details>
+            <details>
+                <summary><strong>Nước hoa mùa hè có dùng được cho mùa đông không?</strong></summary>
+                <p>Hoàn toàn được, nhưng độ tỏa hương sẽ kém hơn trong thời tiết lạnh do thiếu nhiệt độ cơ thể để khuếch tán. Mùi hương cũng sẽ có cảm giác lạnh và mỏng hơn.</p>
+            </details>
+            
+            <details>
+                <summary><strong>Làm sao để bảo quản nước hoa không bị hỏng trong mùa hè?</strong></summary>
+                <p>Nhiệt độ cao là "kẻ thù" số 1 của nước hoa. Tuyệt đối không để nước hoa ở cốp xe máy, bệ cửa sổ có nắng chiếu vào hay trong phòng tắm ẩm ướt. Nơi lý tưởng nhất là cất lại vào hộp giấy của hãng và để trong tủ quần áo mát mẻ, tránh ánh sáng trực tiếp.</p>
+            </details>
+            <details>
+                <summary><strong>Có nên xịt thẳng nước hoa lên áo trắng đồng phục không?</strong></summary>
+                <p>Nước hoa chứa cồn và tinh dầu nên có rủi ro làm ố vàng áo sơ mi trắng theo thời gian. Tốt nhất bạn nên xịt trực tiếp lên da, đợi da khô hoàn toàn rồi mới mặc áo. Nếu vẫn muốn xịt lên quần áo để giữ mùi lâu hơn, hãy xịt cách xa khoảng 15-20cm để tia nước tỏa thành sương mù nhé.</p>
+            </details>
+        </section>
+    </main>
+    <hr>
+
+    <footer>
+        <p>Người thực hiện: Nguyễn Minh Chí</p>
+        <p>&copy; 2026 Trạm Hương Mùa Hè. Tự thiết kế bằng HTML.</p>
+    </footer>
+
+</body>
+</html>

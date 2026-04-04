@@ -330,35 +330,36 @@
             margin: 5px 0;
             color: #d9d9d9;
         }
-        /* =========================================
-   CẤU HÌNH GIAO DIỆN RIÊNG CHO ĐIỆN THOẠI 
-   (Áp dụng khi màn hình nhỏ hơn 768px)
-========================================= */
-@media (max-width: 768px) {
-    
-    /* 1. Bẻ phần ẩm thực từ hàng ngang (row) sang hàng dọc (column) */
-    .am-thuc-container {
-        flex-direction: column;
-        gap: 15px; 
-    }
-
-    /* 2. Mở rộng bức ảnh gà Đông Tảo ra choán hết chiều ngang điện thoại */
-    .am-thuc-image {
-        flex: 0 0 100%;
-        width: 100%;
-    }
-
-    /* 3. Thu nhỏ chiều cao của video YouTube lại kẻo nó bị dài thượt */
-    iframe {
-        height: 250px !important; 
-    }
-
-    /* 4. Chỉnh cho ảnh bìa thành phố Hưng Yên ở đầu trang không bị tràn */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-}
+  /* Tối ưu giao diện cho màn hình nhỏ (Điện thoại/Tablet) */
+        @media (max-width: 768px) {
+            .perfume-item {
+                flex-direction: column; /* Đổi bố cục từ nằm ngang sang nằm dọc */
+                align-items: center; /* Căn giữa ảnh */
+                text-align: center; /* Căn giữa chữ cho đẹp */
+            }
+            
+            .perfume-img {
+                margin-bottom: 15px; /* Tạo khoảng trống giữa ảnh và chữ khi bị đẩy xuống */
+                width: 100%; /* Cho ảnh linh hoạt theo chiều rộng */
+                max-width: 250px; /* Nhưng không to quá 250px */
+            }
+            
+            .perfume-info {
+                width: 100%; /* Cho phần chữ chiếm toàn bộ không gian ngang */
+            }
+            
+            /* Sửa lại thanh menu cho điện thoại luôn */
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>

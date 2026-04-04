@@ -330,6 +330,35 @@
             margin: 5px 0;
             color: #d9d9d9;
         }
+        /* =========================================
+   CẤU HÌNH GIAO DIỆN RIÊNG CHO ĐIỆN THOẠI 
+   (Áp dụng khi màn hình nhỏ hơn 768px)
+========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Bẻ phần ẩm thực từ hàng ngang (row) sang hàng dọc (column) */
+    .am-thuc-container {
+        flex-direction: column;
+        gap: 15px; 
+    }
+
+    /* 2. Mở rộng bức ảnh gà Đông Tảo ra choán hết chiều ngang điện thoại */
+    .am-thuc-image {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    /* 3. Thu nhỏ chiều cao của video YouTube lại kẻo nó bị dài thượt */
+    iframe {
+        height: 250px !important; 
+    }
+
+    /* 4. Chỉnh cho ảnh bìa thành phố Hưng Yên ở đầu trang không bị tràn */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
     </style>
 </head>
 <body>

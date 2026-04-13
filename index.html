@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trạm Hương Mùa Hè | Nước Hoa Học Đường</title>
+    <link rel="icon" href="favicon.jpg" type="image/jpeg">
     <style>
         /* 1. Nhúng Font chữ Montserrat cực kỳ sang trọng từ Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap');
@@ -25,7 +26,7 @@
             background: linear-gradient(135deg, #d4f1f9 0%, #ffffff 100%); /* Xanh biển nhạt chuyển dần sang trắng */
             border-bottom: 1px solid #e0e0e0;
         }
-        
+       
         header h1 {
             color: #0077b6; /* Xanh đại dương sâu thẳm, sang trọng */
             font-size: 2.8em;
@@ -360,6 +361,20 @@
                 text-align: center;
             }
         }
+        .logo-container {
+  position: relative; /* Điều này là quan trọng để định vị tuyệt đối bên trong nó hoạt động */
+  /* Bạn có thể thêm chiều cao, v.v. cho container này nếu cần */
+}
+
+.logo {
+  position: absolute; /* Định vị tuyệt đối */
+  top: 10px; /* Cách đỉnh màn hình 10px */
+  left: 10px; /* Cách lề trái màn hình 10px */
+  /* Bạn có thể điều chỉnh các giá trị top và left này theo ý muốn */
+  /* Đặt chiều rộng và chiều cao cho logo của bạn */
+  width: 150px; /* Hoặc chiều rộng phù hợp với logo của bạn */
+  height: auto; /* Tự động điều chỉnh chiều cao theo tỷ lệ */
+}
     </style>
 </head>
 <body>
@@ -370,6 +385,11 @@
         </div>
         <h1>Trạm Hương Mùa Hè</h1>
         <p class="slogan">- Gợi ý nước hoa thanh mát, nhẹ nhàng cho học sinh đến trường -</p>
+        
+  <div class="logo-container">
+    <img src="favicon.jpg" alt="Logo Trạm Hương Mùa Hè" class="logo">
+  </div>
+  
     </header>
     <section id="gioi-thieu">
         <p>Mùa hè oi bức ở trường học đòi hỏi sự tinh tế trong việc chọn mùi hương. Một chai nước hoa phù hợp không chỉ giúp bạn tự tin, sảng khoái mà còn thể hiện sự tôn trọng không gian lớp học. "Trạm Hương Mùa Hè" ra đời nhằm tổng hợp và đánh giá khách quan những mùi hương thanh mát, an toàn và thân thiện nhất với túi tiền học sinh, giúp bạn dễ dàng tìm được "chân ái" cho mùa hè này.</p>

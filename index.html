@@ -14,7 +14,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #f0f8ff; /* Nền xanh Alice mờ ảo, vô cùng mát mắt */
             color: #333;
-            line-height: 1.8;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
             font-size: 18px;
@@ -369,14 +369,14 @@
 
 .logo {
   position: absolute; /* Định vị tuyệt đối */
-  top: 10px; /* Cách đỉnh màn hình 10px */
-  left: 10px; /* Cách lề trái màn hình 10px */
+  top: 12px; /* Cách đỉnh màn hình 10px */
+  left: 12px; /* Cách lề trái màn hình 10px */
   /* Bạn có thể điều chỉnh các giá trị top và left này theo ý muốn */
   /* Đặt chiều rộng và chiều cao cho logo của bạn */
-  width: 160px; /* Hoặc chiều rộng phù hợp với logo của bạn */
+  width: 182px; /* Hoặc chiều rộng phù hợp với logo của bạn */
   height: auto; /* Tự động điều chỉnh chiều cao theo tỷ lệ */
     .logo-branding {
-    width: 210px; /* Điều chỉnh kích thước hiển thị */
+    width: 226px; /* Điều chỉnh kích thước hiển thị */
     height: auto; /* Giữ đúng tỷ lệ logo */
     display: block;
     
@@ -388,6 +388,65 @@
     outline: none;
 }
 }
+/* 1. Ép vùng chứa ảnh thành hình vuông cố định */
+        .image-container {
+            position: relative;
+            width: 220px; 
+            height: 220px; /* Đã thêm: Ép chiều cao bằng chiều rộng */
+            flex-shrink: 0; 
+            border-radius: 8px;
+            overflow: hidden; 
+        }
+
+        /* 2. Ép ảnh lấp đầy khung vuông mà KHÔNG BỊ BẸT */
+        .image-container .perfume-img {
+            width: 100%;
+            height: 100%; /* Tràn viền chiều cao */
+            object-fit: cover; /* Lệnh thần thánh: cắt cúp ảnh tự động cho vừa khung */
+            display: block;
+        }
+
+        /* 3. Lớp phủ đen mờ */
+        .overlay-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 43, 74, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0; 
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        /* 4. Hiện ra khi rê chuột */
+        .image-container:hover .overlay-link {
+            opacity: 1; 
+        }
+
+        /* 5. Nút bấm */
+        .overlay-text {
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            padding: 8px 16px;
+            border: 2px solid white;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* 6. Đổi màu nút khi rê chuột vào chữ */
+        .overlay-text:hover {
+            background-color: white;
+            color: #0077b6;
+        }
+        .perfume-info strong {
+            font-size: 1.1em; /* Điều chỉnh lại độ to của tên nước hoa cho cân đối */
+        }
     </style>
 </head>
 <body>
@@ -449,7 +508,13 @@
             <h3>Hương Hè Cho Nam</h3>
             <div class="perfume-list">
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://perfumista.vn/nuoc-hoa-nam/nuoc-hoa-nautica-nautica-voyage-6447.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+                   </a>
+                
                     <img src="nautica.jpg" alt="Nautica Voyage" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Nautica Voyage</strong>
                         <p>Mùi hương "quốc dân" cho nam sinh. Tươi mát, giòn tan mùi táo xanh và lá cây. Cảm giác sạch sẽ như vừa bước ra từ phòng tắm. Rất rẻ và cực kỳ an toàn cho không gian lớp học.</p>
@@ -459,40 +524,64 @@
                 </div>
 
                 <div class="perfume-item">
+                     <div class="image-container">
+                    <a href="https://perfumista.vn/nuoc-hoa-nam/nuoc-hoa-giorgio-armani-acqua-di-gio-97137.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="gio trang.jpg" alt="Acqua Di Giò" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Giorgio Armani Acqua Di Giò (Giò Trắng)</strong>
                         <p>Huyền thoại kinh điển. Sự pha trộn mượt mà giữa chanh vàng và hương nước biển. Thanh lịch, nam tính và vô cùng dễ chịu.</p>
                         <p><strong>- Phong cách:</strong> Thanh lịch, nam tính, kinh điển.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~2.500.000đ - 3.000.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~250.000đ - 300.000đ / chai 10ml.</p>
                     </div>
                 </div>
 
                 <div class="perfume-item">
+                     <div class="image-container">
+                    <a href="https://perfumista.vn/nuoc-hoa-nam/nuoc-hoa-versace-versace-pour-homme-33308.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="versace.jpg" alt="Versace Pour Homme" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Versace Pour Homme</strong>
                         <p>Sang trọng nhưng vẫn trẻ trung. Nổi bật với hương hoa hồng Pháp, chanh vàng và gỗ tuyết tùng. Độ đa dụng cực cao, đi học hay dự sự kiện trường đều hợp.</p>
                         <p><strong>- Phong cách:</strong> Tươi mát, sang trọng, cuốn hút.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~1.800.000đ - 2.200.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~180.000đ - 220.000đ / chai 10ml.</p>
                     </div>
                 </div>
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://apaniche.vn/lacoste-l-12-12-blanc-edp" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="lacoste.webp" alt="Lacoste L.12.12 Blanc" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Lacoste L.12.12 Blanc </strong>
                         <p>Mùi hương mang đậm tinh thần thể thao nhưng vẫn vô cùng thanh lịch. Sự kết hợp của quả bưởi tây, hoa huệ và da lộn tạo ra cảm giác sạch sẽ, tươm tất hệt như bạn vừa khoác lên mình một chiếc áo sơ mi trắng tinh khôi rực rỡ dưới nắng hè. Một lựa chọn tuyệt đối an toàn và ghi điểm tối đa.</p>
                         <p><strong>- Phong cách:</strong> Sạch sẽ, tươm tất, năng động.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~1.200.000đ - 1.500.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~120.000đ - 150.000đ / chai 10ml.</p>
                     </div>
                 </div>
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://www.fragrantica.com/perfume/Calvin-Klein/CK-One-Essence-95956.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="ckone.jpg" alt="Calvin Klein CK One Essence" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Calvin Klein CK One Essence </strong>
                         <p>Phiên bản cao cấp và đậm đặc gấp đôi so với huyền thoại CK One nguyên bản. Vẫn mang ADN thanh mát, trong trẻo của trà xanh và cam chanh, nhưng Essence mượt mà hơn, có chiều sâu hơn và đặc biệt là độ lưu hương được cải thiện vượt trội. Thiết kế chai tráng gương bóng bẩy cực kỳ bắt mắt.</p>
                         <p><strong>- Phong cách:</strong> Hiện đại, tự do, cuốn hút.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~1.200.000đ - 1.600.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~120.000đ - 160.000đ / chai 10ml.</p>
                     </div>
                 </div>
             </div>
@@ -500,17 +589,29 @@
             <h3>Hương Hè Cho Nữ</h3>
             <div class="perfume-list">
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://perfumista.vn/nuoc-hoa-nu/nuoc-hoa-dolce-gabbana-light-blue-4067.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="DG.jpg" alt="Light Blue" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Dolce & Gabbana Light Blue</strong>
                         <p>Giống như một ly nước chanh đá giải nhiệt. Hương chanh vàng Sicily kết hợp táo xanh cực kỳ trong trẻo, năng động, rất hợp mặc áo sơ mi trắng.</p>
                         <p><strong>- Phong cách:</strong> Tự do, năng động, tươi mới.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~2.000.000đ - 2.500.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~200.000đ - 250.000đ / chai 10ml.</p>
                     </div>
                 </div>
 
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://perfumista.vn/nuoc-hoa-nu/nuoc-hoa-elizabeth-arden-green-tea-103750.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="elizabeth.jpg" alt="Green Tea" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Elizabeth Arden Green Tea</strong>
                         <p>Nhẹ nhàng, thư giãn tuyệt đối với nốt hương trà xanh và bạc hà. Mùi hương không ồn ào, rất an toàn để dùng hàng ngày đi học.</p>
@@ -520,31 +621,49 @@
                 </div>
 
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://www.fragrantica.com/perfume/Marc-Jacobs/Daisy-Eau-So-Fresh-10858.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="daisy.png" alt="Marc Jacobs Daisy" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Marc Jacobs Daisy Eau So Fresh</strong>
                         <p>Dành cho các bạn nữ thích sự dễ thương, trong sáng. Sự kết hợp trái cây và hương lục tươi mát, không hề bị ngọt gắt.</p>
                         <p><strong>- Phong cách:</strong> Dễ thương, nữ tính, trong trẻo.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~2.200.000đ - 2.600.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~220.000đ - 260.000đ / chai 10ml.</p>
                     </div>
                 </div>
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://perfumista.vn/nuoc-hoa-unisex/nuoc-hoa-maison-martin-margiela-lazy-sunday-morning-20683.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="maison.webp" alt="Replica Lazy Sunday Morning" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Maison Margiela Replica Lazy Sunday Morning</strong>
                         <p>Đỉnh cao của phong cách "Clean Girl". Mùi hương mô phỏng sự sạch sẽ của những chiếc áo sơ mi trắng tinh tươm vừa được giặt phơi dưới nắng sớm. Sự kết hợp của hoa diên vĩ, xạ hương trắng và quả lê tạo nên một cảm giác vô cùng thư giãn, trong trẻo. Tuyệt đối an toàn và tinh tế cho môi trường học đường.</p>
                         <p><strong>- Phong cách:</strong> Sạch sẽ, tinh khôi, thư giãn.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~2.800.000đ - 3.200.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~280.000đ - 320.000đ / chai 10ml.</p>
                     </div>
                 </div>
 
                 <div class="perfume-item">
+                    <div class="image-container">
+                    <a href="https://perfumista.vn/nuoc-hoa-unisex/nuoc-hoa-jo-malone-london-wood-sage-sea-salt-33321.html" target="_blank" class="overlay-link">
+            <span class="overlay-text">Xem chi tiết ở đây ➔</span>
+        </a>
+        
                     <img src="woodsage.jpg" alt="Jo Malone Wood Sage & Sea Salt" class="perfume-img">
+                </div>
                     <div class="perfume-info">
                         <strong>Jo Malone Wood Sage & Sea Salt</strong>
                         <p>Một cơn gió biển thực sự giữa ngày hè oi ả. Khác với những mùi hương nữ tính ngọt ngào thông thường, chai nước hoa này mang vị mặn nhẹ của muối biển kết hợp cùng sự thanh tao của thảo mộc xô thơm. Rất mộc mạc, phóng khoáng, mát mẻ và xua tan ngay lập tức không khí ngột ngạt của lớp học.</p>
                         <p><strong>- Phong cách:</strong> Tự do, thanh tao, gần gũi.</p>
-                        <p><strong>- Giá tham khảo:</strong> ~3.000.000đ - 3.500.000đ / chai 100ml.</p>
+                        <p><strong>- Giá tham khảo:</strong> ~300.000đ - 350.000đ / chai 10ml.</p>
                     </div>
                 </div>
             </div>
@@ -573,7 +692,21 @@
         <hr>
 
         <section id="faq">
-            <h2>6. Giải đáp thắc mắc (FAQ)</h2>
+            <div class="video-container" style="margin-top: 25px; text-align: center;">
+    <h4 style="margin-bottom: 15px; color: #0077b6;">🎥 Video Hướng Dẫn Chi Tiết Từ Chuyên Gia</h4>
+    
+    <iframe 
+        width="100%" 
+        height="400" 
+        src="https://www.youtube.com/embed/iqQrmZT7lBM" 
+        title="Hướng dẫn phân biệt nước hoa" 
+        frameborder="0" 
+        allowfullscreen
+        style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); max-width: 700px;">
+    </iframe>
+</div>
+</div>
+            <h2 style="margin-top: 50px;">6. Giải đáp thắc mắc (FAQ)</h2>
             <details>
                 <summary><strong>Đi học xịt bao nhiêu nhát là đủ?</strong></summary>
                 <p>Nên xịt tối đa 2-3 nhát (1 ở cổ tay, 1-2 ở sau gáy) để duy trì sự thoang thoảng, tinh tế, không làm ảnh hưởng đến không gian lớp học chật hẹp.</p>
@@ -642,7 +775,7 @@
 
             <div class="footer-contact">
                 <strong>Thông tin liên hệ</strong>
-                <p>📍 Địa chỉ: Lạc Hồng, Hưng Yên</p>
+                <p>📍 Địa chỉ: Bình Minh, Như Quỳnh, Hưng Yên</p>
                 <p>📧 Email: minhchi1522008@gmail.com</p>
                 <p>📞 Hotline: 03xx.xxx.xxx</p>
             </div>
